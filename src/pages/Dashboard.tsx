@@ -227,7 +227,7 @@ const Dashboard = () => {
               {/* Recent Feedback */}
               <div>
                 <h3 className="text-lg font-medium mb-2 flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4" />
+                  <CheckCircle className="h-4 w-4" />
                   Recent Feedback
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

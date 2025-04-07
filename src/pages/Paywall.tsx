@@ -75,7 +75,7 @@ const Paywall = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex gap-4">
                   <div className="shrink-0 p-2 rounded-full bg-muted">
-                    <Nutrition className="h-5 w-5 text-fit-blue" />
+                    {/* <Nutrition className="h-5 w-5 text-fit-blue" /> */}
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Advanced Nutrition Tracking</h3>

@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle } from 'lucide-react';
 import { MealAnalysisResult } from '../lib/ai';
 
 interface FeedbackCardProps {
@@ -18,7 +18,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ meal, compact = false }) =>
           </h3>
           <div>
             {meal.verdict === 'Approved' ? (
-              <CheckCircle2 className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-green-500" />
             ) : (
               <XCircle className="h-5 w-5 text-red-500" />
             )}
