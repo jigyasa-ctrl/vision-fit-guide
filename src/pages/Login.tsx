@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -8,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dumbbell, Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -42,11 +42,16 @@ const Login = () => {
   };
   
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-muted/30">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen flex items-center justify-center p-4 bg-muted/30"
+    >
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center mb-4">
-            <Dumbbell className="h-12 w-12 text-fit-blue" />
+            <Dumbbell className="h-12 w-12 text-yellow-500" />
           </div>
           <h1 className="text-3xl font-bold">FitVision</h1>
           <p className="text-muted-foreground">Log in to track your nutrition journey</p>
@@ -75,7 +80,7 @@ const Login = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <Link to="/forgot-password" className="text-sm text-fit-blue hover:underline">
+                  <Link to="/forgot-password" className="text-sm text-yellow-500 hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -103,7 +108,7 @@ const Login = () => {
               </Button>
               <p className="text-sm text-center text-muted-foreground">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-fit-blue hover:underline">
+                <Link to="/register" className="text-yellow-500 hover:underline">
                   Create one
                 </Link>
               </p>
@@ -115,7 +120,7 @@ const Login = () => {
           <p>Test account: test@example.com / any password</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

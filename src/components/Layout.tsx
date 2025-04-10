@@ -33,8 +33,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       className={cn(
         "flex items-center gap-2 px-4 py-2 rounded-lg transition-colors",
         location.pathname === item.path
-          ? "bg-fit-blue text-white"
-          : "hover:bg-fit-blue/10"
+          ? "bg-yellow-500 text-white"
+          : "hover:bg-yellow-100"
       )}
     >
       {item.icon}

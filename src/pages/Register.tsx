@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -8,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dumbbell, Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -46,11 +46,16 @@ const Register = () => {
   };
   
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-muted/30">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen flex items-center justify-center p-4 bg-muted/30"
+    >
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center mb-4">
-            <Dumbbell className="h-12 w-12 text-fit-blue" />
+            <Dumbbell className="h-12 w-12 text-yellow-500" />
           </div>
           <h1 className="text-3xl font-bold">FitVision</h1>
           <p className="text-muted-foreground">Create an account to start your nutrition journey</p>
@@ -142,7 +147,7 @@ const Register = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

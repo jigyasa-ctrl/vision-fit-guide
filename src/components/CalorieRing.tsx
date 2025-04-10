@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface CalorieRingProps {
@@ -26,7 +25,7 @@ const CalorieRing: React.FC<CalorieRingProps> = ({
   } else if (percentage <= 80) {
     progressColor = 'stroke-amber-500';
   } else if (percentage <= 100) {
-    progressColor = 'stroke-fit-blue';
+    progressColor = 'stroke-yellow-500';
   } else {
     progressColor = 'stroke-red-500';
   }
