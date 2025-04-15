@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dumbbell, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useMutation } from 'convex/react';
+import { api } from "../../convex/_generated/api"
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -17,6 +19,17 @@ const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
+
+  const createProfile = useMutation(api.profile.createProfile)
+
+  const handleCreateNew = async () => {
+    // call the mutation here
+    createProfile({
+      name: name,
+      email: email,
+      password: password
+    })
+  }
   
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -119,6 +132,7 @@ const Register = () => {
                 type="submit" 
                 className="w-full"
                 disabled={isLoading}
+                onClick={handleCreateNew}
               >
                 {isLoading ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
