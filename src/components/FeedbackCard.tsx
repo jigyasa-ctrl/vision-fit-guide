@@ -15,7 +15,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({ meal, compact = false }) =>
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className={`overflow-hidden fitvision-border ${compact ? 'h-full' : ''}`}>
+      <Card className={`border-4 border-yellow-400 overflow-hidden fitvision-border ${compact ? 'h-full' : ''}`}>
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-medium flex items-center gap-2">

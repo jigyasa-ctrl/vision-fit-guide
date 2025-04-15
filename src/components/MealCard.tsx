@@ -25,7 +25,7 @@ const MealCard: React.FC<MealCardProps> = ({ meal }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="overflow-hidden fitvision-border hover:shadow-md transition-shadow">
+      <Card className="border-4 overflow-hidden border-yellow-400 fitvision-border hover:shadow-md transition-shadow">
         <div className="relative">
           {meal.imageUrl && (
             <img 

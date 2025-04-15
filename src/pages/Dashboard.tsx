@@ -67,7 +67,7 @@ const Dashboard = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Calorie Summary */}
-            <Card className="fitvision-border">
+            <Card className="border-4 fitvision-border border-yellow-400">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg">Daily Calories</CardTitle>
               </CardHeader>
@@ -90,7 +90,7 @@ const Dashboard = () => {
             </Card>
             
             {/* Macros Summary */}
-            <Card className="fitvision-border">
+            <Card className="border-4 fitvision-border border-yellow-400">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center">
                   <CardTitle className="text-lg">Macro Nutrients</CardTitle>
@@ -120,7 +120,7 @@ const Dashboard = () => {
             </Card>
             
             {/* Goal Progress */}
-            <Card className="fitvision-border">
+            <Card className="border-4 fitvision-border border-yellow-400">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-center">
                   <CardTitle className="text-lg">
@@ -155,7 +155,7 @@ const Dashboard = () => {
             <h2 className="text-2xl font-semibold mb-4">Today's Meals</h2>
             
             {todaysMeals.length === 0 ? (
-              <Card className="fitvision-border">
+              <Card className="border-4 fitvision-border border-yellow-400">
                 <CardContent className="py-6">
                   <div className="text-center space-y-4">
                     <div className="flex justify-center">
