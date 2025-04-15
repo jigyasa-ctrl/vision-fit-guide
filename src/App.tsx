@@ -18,10 +18,13 @@ import Profile from "./pages/Profile";
 import ProfileSetup from "./pages/ProfileSetup";
 import Paywall from "./pages/Paywall";
 import NotFound from "./pages/NotFound";
+import { ConvexClientProvider } from "./ConvexClientProvider";
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
+  <ConvexClientProvider>
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <MealHistoryProvider>
@@ -80,6 +83,7 @@ const App = () => (
       </MealHistoryProvider>
     </AuthProvider>
   </QueryClientProvider>
+  </ConvexClientProvider>
 );
 
 export default App;
