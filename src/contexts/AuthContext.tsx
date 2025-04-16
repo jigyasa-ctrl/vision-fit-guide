@@ -39,7 +39,7 @@ interface AuthContextType {
   isLoading: boolean;
   isAuthenticated: boolean;
   canAccessPremiumFeatures: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (user: any) => Promise<void>;
   register: (email: string, password: string, name: string) => Promise<void>;
   logout: () => Promise<void>;
   updateUserProfile: (profile: UserProfile) => Promise<void>;
@@ -98,11 +98,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     }
   }, [currentUser]);
 
-  const login = async (email: string, password: string) => {
+  const login = async (user: any) => {
     setIsLoading(true);
     try {
-      // Mock login - in a real app, this would call your auth API
-      const user = mockUsers.find(u => u.email === email);
       if (!user) {
         throw new Error('Invalid email or password');
       }

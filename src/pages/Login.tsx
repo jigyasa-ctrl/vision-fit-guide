@@ -8,13 +8,15 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Dumbbell, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import {useMutation} from "convex/react";
+import {api}  from "../../convex/_generated/api"
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+  const validateCrendential = useMutation(api.profile.validateCrendential)
   const location = useLocation();
   
   // Get the redirect path from location state or default to dashboard
@@ -31,8 +33,18 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      await login(email, password);
-      navigate(from, { replace: true });
+      const response = await validateCrendential({
+        email: email,
+        password: password
+      })
+      
+      if(response){
+        const user = response
+        await login(user)
+      navigate('/dashboard');
+      } else{
+        console.log("Login Unsuccessfull")
+      }
     } catch (error) {
       console.error('Login error:', error);
       toast.error('Invalid email or password');
